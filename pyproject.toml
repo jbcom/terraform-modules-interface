@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "terraform-modules-interface"
+version = "1.0.0"
+description = ""
+authors = ["Jon Bogaty <jon@jonbogaty.com>"]
+readme = "README.md"
+packages = [{include = "terraform_modules_interface"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+filesystem-broker = {git = "https://github.com/jbcom/filesystem-broker.git", branch = "main"}
+gitops-utils = {git = "https://github.com/jbcom/gitops-utils.git", branch = "main"}
+tssplit = "^1.0.6"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
